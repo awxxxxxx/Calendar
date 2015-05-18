@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日历</title>
+	<meta name="viewport" content="width=device-width,user-scalable=yes">
+	<link rel="stylesheet" href="./public/css/calendar.css">
+
+</head>
+<body>
+	<div id="calendar"></div>
+	<script src="./public/js/calendar.js"></script>
+	<script>
+		(function(){
+			var cal = function(date) {
+				console.log(date);
+			}
+			Calendar.init('calendar',new Date(), cal);
+		}());
+	</script>
+</body>
+</html>

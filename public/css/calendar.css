@@ -1,0 +1,81 @@
+html,
+body {
+  font: 400 14px/1.5 Tahoma, Helvetica, arial, sans-serif;
+  height: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+#calendar,
+#calHead,
+#calDays,
+.week,
+#calDays .day,
+#calDays .day > div {
+  display: -webkit-flex;
+  display: flex;
+}
+#calendar,
+#calDays {
+  -webkit-felx-direction: colum;
+  flex-direction: column;
+}
+#prevMonth,
+#nextMonth,
+.week > div,
+#calDays .day > div {
+  flex: 1;
+  text-align: center;
+  align-content: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#calendar {
+  min-height: 100%;
+}
+#calHead,
+.week {
+  background-color: #2bb8aa;
+  font-size: 1.5em;
+  color: #fff;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.week > div,
+#calDays {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  height: auto;
+}
+#calDays {
+  flex: 1;
+  align-items: stretch;
+  min-height: 100%;
+}
+#calDays .day {
+  min-height: 100%;
+  flex: 1;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  align-content: stretch;
+}
+#calDays .day span {
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  line-height: 3em;
+}
+.beside {
+  color: #d9d9d9;
+}
+.daySelected {
+  background-color: #2bb8aa;
+  color: #fff;
+  border-radius: 50%;
+}
+.today {
+  background-color: #d9d9d9;
+  color: #2bb8aa;
+  border-radius: 50%;
+}
