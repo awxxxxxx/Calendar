@@ -12,6 +12,7 @@ body {
 #calDays .day,
 #calDays .day > div {
   display: -webkit-flex;
+  display: -moz-flex;
   display: flex;
 }
 #calendar,
@@ -23,6 +24,7 @@ body {
 #nextMonth,
 .week > div,
 #calDays .day > div {
+  -webkit-flex: 1;
   flex: 1;
   text-align: center;
   align-content: center;
@@ -48,13 +50,14 @@ body {
   height: auto;
 }
 #calDays {
+  -webkit-flex: 1;
   flex: 1;
   align-items: stretch;
   min-height: 100%;
 }
 #calDays .day {
-  min-height: 100%;
   flex: 1;
+  -webkit-flex: 1;
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
