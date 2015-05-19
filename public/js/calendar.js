@@ -67,7 +67,8 @@ var Calendar = (function() {
 		addDay: function(dates) {
 			var days = this.doc.createElement('div'),
 				len = dates.length,
-				month = this.date.getMonth();
+				month = this.date.getMonth()
+				today = new Date();
 
 			for(var i = 0; i < len; i++) {
 				var colDay = this.doc.createElement('div');
@@ -82,7 +83,7 @@ var Calendar = (function() {
 					}
 					
 					//若日期为今天则添加 'today' 类，突出显示
-					if(dates[i][j].getDate() === new Date().getDate() && dates[i][j].getMonth() === new Date().getMonth()) {
+					if(dates[i][j].toDateString() === today.toDateString()) {
 						day.innerHTML = '<span class="today">' + dates[i][j].getDate() + '</span>';
 					}
 					else {
@@ -93,7 +94,6 @@ var Calendar = (function() {
 
 				days.appendChild(colDay);
 			}
-
 			days.id = 'calDays';
 			this.main.appendChild(days);
 			var that = this;
