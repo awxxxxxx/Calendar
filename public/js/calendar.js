@@ -100,6 +100,7 @@ var Calendar = (function() {
 
 			//对日期添加事件监听，将选中的日期作为参数传入回调函数中
 			days.addEventListener('click',function(e){
+
 				if(that.callback instanceof Function && e.target.nodeName === 'SPAN') {
 
 					var day = that.doc.querySelector('.daySelected');
@@ -113,8 +114,8 @@ var Calendar = (function() {
 						that.callback(e.target.parentNode.getAttribute('date'));
 						e.target.className = 'daySelected';
 					}
-					
 				}
+				
 				
 			},false);
 
@@ -169,6 +170,7 @@ var Calendar = (function() {
 
 			//点击切换上一个月
 			prev.addEventListener('click',function(e){
+				e.preventDefault();
 				var year = parseInt(that.date.getFullYear(), 10),
 					month = parseInt(that.date.getMonth(),10);
 
@@ -180,7 +182,10 @@ var Calendar = (function() {
 				else {
 					that.date = new Date(year, month - 1, 1);
 				}
+
+				
 				that.render();
+				return false;
 
 			},false);
 
@@ -188,7 +193,7 @@ var Calendar = (function() {
 			next.addEventListener('click', function(e) {
 				var year = parseInt(that.date.getFullYear(), 10),
 					month = parseInt(that.date.getMonth(),10);
-
+				e.preventDefault();
 				//如果月份为 11 则为下一年
 				if(month === 11) {
 

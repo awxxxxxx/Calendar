@@ -9,17 +9,21 @@ body {
 #calHead,
 #calDays,
 .week,
-#calDays .day,
-#calDays .day > div {
-  display: -webkit-flex;
+#calDays .day {
   display: -webkit-box;
-  display: -moz-flex;
+  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
 }
 #calendar,
 #calDays {
-  -webkit-felx-direction: colum;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 #prevMonth,
@@ -30,7 +34,7 @@ body {
   -moz-box-flex: 1;
   -webkit-box-flex: 1;
   -ms-flex: 1 auto;
-  flex: 1;
+  flex: 1 ;
   text-align: center;
   align-content: center;
   -webkit-justify-content: center;
@@ -42,11 +46,28 @@ body {
 }
 #calHead,
 .week {
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
   background-color: #2bb8aa;
   font-size: 1.5em;
   color: #fff;
   padding-bottom: 10px;
   padding-top: 10px;
+}
+#calHead > div {
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
 }
 .week > div,
 #calDays {
@@ -55,11 +76,11 @@ body {
   height: auto;
 }
 #calDays {
-  -webkit-flex: 1;
-  flex: 1;
-  -ms-flex: 1;
-  align-items: stretch;
-  min-height: 100%;
+  -webkit-box-flex: 2;
+  -moz-box-flex: 2;
+  -webkit-flex: 2 1 auto;
+  -ms-flex: 2 1 auto;
+  flex: 2 1 auto;
 }
 #calDays .day {
   flex: 1;
