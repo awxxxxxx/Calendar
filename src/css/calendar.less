@@ -13,8 +13,14 @@ html,body {
 }
 
 #calendar,#calDays{
-	-webkit-felx-direction: colum;
-	flex-direction: column;
+	-webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+	
 }
 
 #prevMonth, #nextMonth, .week > div, #calDays .day > div{
